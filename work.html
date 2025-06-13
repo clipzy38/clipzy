@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Work – Video Editing Agency</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0b0b0b;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: #0f0f0f;
+      box-shadow: 0 0 10px rgba(0,255,255,0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .promo-btn {
+      display: block;
+      margin: 2rem auto;
+      background: #00ffff;
+      color: #000;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 15px #00ffff;
+      transition: background 0.3s ease;
+    }
+
+    .promo-btn:hover {
+      background: #00cccc;
+    }
+
+    .promo-video {
+      display: none;
+      max-width: 960px;
+      margin: 2rem auto;
+      box-shadow: 0 0 25px rgba(0,255,255,0.2);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .promo-video video {
+      width: 100%;
+    }
+
+    .filter-buttons {
+      text-align: center;
+      margin: 2rem;
+    }
+
+    .filter-buttons button {
+      background: #00ffff;
+      color: #000;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      margin: 0 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 15px #00ffff;
+      transition: all 0.3s ease;
+    }
+
+    .filter-buttons button:hover {
+      background: #00cccc;
+    }
+
+    .category {
+      margin: 3rem auto;
+      max-width: 1000px;
+    }
+
+    .category h2 {
+      color: #00ffff;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .video-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .video-card {
+      background: #111;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 0 20px rgba(0,255,255,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(0,255,255,0.3);
+    }
+
+    .video-card video {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .video-card h3 {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      text-align: center;
+      color: #00ffff;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+     <nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+  <header>
+    <h1>Our Work</h1>
+  </header>
+
+  <button class="promo-btn" onclick="showPromo()">Watch Promo</button>
+  <div class="promo-video" id="promoContainer">
+    <video src="videos/promo.mp4" controls autoplay muted loop></video>
+  </div>
+
+  <div class="filter-buttons">
+    <button onclick="toggleView('long')">Long Form</button>
+    <button onclick="toggleView('short')">Short Form</button>
+  </div>
+
+  <!-- Long Form Videos -->
+  <div id="longForm">
+    <div class="category"><h2>Professional</h2>
+      <div class="video-row">
+        <div class="video-card"><video src="videos/long_pro_1.mp4" controls></video><h3>Corporate Ad</h3></div>
+        <div class="video-card"><video src="videos/long_pro_2.mp4" controls></video><h3>Event Recap</h3></div>
+      </div>
+    </div>
+
+    <div class="category"><h2>Minimal</h2>
+      <div class="video-row">
+        <div class="video-card"><video src="videos/long_min_1.mp4" controls></video><h3>Interview</h3></div>
+        <div class="video-card"><video src="videos/long_min_2.mp4" controls></video><h3>Clean Cut</h3></div>
+      </div>
+    </div>
+
+    <div class="category"><h2>Motion Graphics</h2>
+      <div class="video-row">
+        <div class="video-card"><video src="videos/long_mg_1.mp4" controls></video><h3>Explainer</h3></div>
+        <div class="video-card"><video src="videos/long_mg_2.mp4" controls></video><h3>Stats Reveal</h3></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Short Form Videos -->
+  <div id="shortForm" class="hidden">
+    <div class="category"><h2>Flashy</h2>
+      <div class="video-row">
+        <div class="video-card"><video src="videos/short_flash_1.mp4" controls></video><h3>IG Reel</h3></div>
+        <div class="video-card"><video src="videos/short_flash_2.mp4" controls></video><h3>Quick Montage</h3></div>
+      </div>
+    </div>
+
+    <div class="category"><h2>Simple</h2>
+      <div class="video-row">
+        <div class="video-card"><video src="videos/short_simple_1.mp4" controls></video><h3>Basic Edit</h3></div>
+        <div class="video-card"><video src="videos/short_simple_2.mp4" controls></video><h3>Product Showcase</h3></div>
+      </div>
+    </div>
+
+    <div class="category"><h2>Professional</h2>
+      <div class="video-row">
+        <div class="video-card"><video src="videos/short_pro_1.mp4" controls></video><h3>Promo Snip</h3></div>
+        <div class="video-card"><video src="videos/short_pro_2.mp4" controls></video><h3>Clean Cut</h3></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showPromo() {
+      document.getElementById("promoContainer").style.display = "block";
+      window.scrollTo({ top: document.getElementById("promoContainer").offsetTop - 50, behavior: 'smooth' });
+    }
+
+    function toggleView(type) {
+      document.getElementById("longForm").classList.toggle("hidden", type !== "long");
+      document.getElementById("shortForm").classList.toggle("hidden", type !== "short");
+    }
+  </script>
+
+</body>
+</html>
