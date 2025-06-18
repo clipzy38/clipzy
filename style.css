@@ -1,3 +1,18 @@
+.video-916 {
+  position: relative;
+  width: 100%;
+  padding-top: 177.78%; /* For 9:16 aspect ratio */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.video-916 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
   .navbar {
     background-color: #292929;
@@ -707,4 +722,20 @@ body {
   border: none;
   border-radius: 8px;
 }
+.video-916 {
+  position: relative;
+  width: 100%;
+  padding-top: 177.78%; /* For 9:16 aspect ratio */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.video-916 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 
