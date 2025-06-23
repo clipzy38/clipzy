@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Work – Video Editing Agency</title>
@@ -124,15 +124,36 @@
     .hidden {
       display: none;
     }
+
+    .video-916 {
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+      padding-top: 177.78%; /* 9:16 ratio */
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,255,255,0.2);
+    }
+
+    .video-916 iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
-     <nav class="navbar">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
   <header>
     <h1>Our Work</h1>
@@ -172,87 +193,80 @@
     </div>
   </div>
 
-<!-- Short Form Videos -->
-<div id="shortForm" class="hidden">
-  <div class="category"><h2>Flashy</h2>
-    <div class="video-row">
-
-      <div class="video-card">
-        <div class="video-916">
-          <iframe 
-            src="https://www.youtube.com/embed/q6wru08KIn4" 
-            title="Basic Edit"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+  <!-- Short Form Videos -->
+  <div id="shortForm" class="hidden">
+    <div class="category"><h2>Flashy</h2>
+      <div class="video-row">
+        <div class="video-card">
+          <div class="video-916">
+            <iframe 
+              src="https://www.youtube.com/embed/q6wru08KIn4" 
+              title="Basic Edit"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <h3>Basic Edit</h3>
         </div>
-        <h3>Basic Edit</h3>
+
+        <div class="video-card">
+          <div class="video-916">
+            <iframe 
+              src="https://www.youtube.com/embed/q6wru08KIn4" 
+              title="Quick Montage"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <h3>Quick Montage</h3>
+        </div>
       </div>
+    </div>
 
-      <div class="video-card">
-        <div class="video-916">
-          <iframe 
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" 
-            title="Quick Montage"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+    <div class="category"><h2>Simple</h2>
+      <div class="video-row">
+        <div class="video-card">
+          <div class="video-916">
+            <iframe 
+              src="https://www.youtube.com/embed/q6wru08KIn4" 
+              title="Product Showcase"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <h3>Product Showcase</h3>
         </div>
-        <h3>Quick Montage</h3>
+      </div>
+    </div>
+
+    <div class="category"><h2>Professional</h2>
+      <div class="video-row">
+        <div class="video-card">
+          <div class="video-916">
+            <iframe 
+              src="https://www.youtube.com/embed/q6wru08KIn4" 
+              title="Promo Snip"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <h3>Promo Snip</h3>
+        </div>
+
+        <div class="video-card">
+          <div class="video-916">
+            <iframe 
+              src="https://www.youtube.com/embed/q6wru08KIn4" 
+              title="Clean Cut"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <h3>Clean Cut</h3>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="category"><h2>Simple</h2>
-    <div class="video-row">
-      <div class="video-card">
-        <div class="video-916">
-          <iframe 
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" 
-            title="Product Showcase"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <h3>Product Showcase</h3>
-      </div>
-    </div>
-  </div>
-
-  <div class="category"><h2>Professional</h2>
-    <div class="video-row">
-      <div class="video-card">
-        <div class="video-916">
-          <iframe 
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID_4" 
-            title="Promo Snip"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <h3>Promo Snip</h3>
-      </div>
-
-      <div class="video-card">
-        <div class="video-916">
-          <iframe 
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID_5" 
-            title="Clean Cut"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <h3>Clean Cut</h3>
-      </div>
-    </div>
-  </div>
-</div>
-
 
   <script>
     function showPromo() {
@@ -265,6 +279,6 @@
       document.getElementById("shortForm").classList.toggle("hidden", type !== "short");
     }
   </script>
-
 </body>
 </html>
+
