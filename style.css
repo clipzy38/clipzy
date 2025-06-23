@@ -607,7 +607,7 @@ body {
 }
 
 .about-container {
-  max-width: 1200px;
+  max-width: 4000px;
   margin: auto;
   display: flex;
   flex-direction: column-reverse;
