@@ -91,9 +91,10 @@
     }
 
     .video-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 1.5rem;
+      justify-content: center;
     }
 
     .video-card {
@@ -102,6 +103,8 @@
       padding: 1rem;
       box-shadow: 0 0 20px rgba(0,255,255,0.1);
       transition: transform 0.3s ease;
+      width: 280px;
+      flex-shrink: 0;
     }
 
     .video-card:hover {
@@ -109,9 +112,28 @@
       box-shadow: 0 0 25px rgba(0,255,255,0.3);
     }
 
-    .video-card video {
+    .video-card video,
+    .video-916 iframe {
       width: 100%;
+      height: auto;
       border-radius: 8px;
+    }
+
+    .video-916 {
+      position: relative;
+      width: 100%;
+      padding-top: 177.78%; /* 9:16 ratio */
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .video-916 iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     .video-card h3 {
@@ -125,29 +147,26 @@
       display: none;
     }
 
-    .video-916 {
-      position: relative;
-      width: 100%;
-      max-width: 300px;
-      padding-top: 177.78%; /* 9:16 ratio */
-      margin: 0 auto;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,255,255,0.2);
+    nav.navbar {
+      background-color: #111;
+      padding: 1rem;
+      text-align: center;
     }
 
-    .video-916 iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      border-radius: 10px;
+    nav.navbar a {
+      color: #00ffff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav.navbar a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
   <nav class="navbar">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -199,27 +218,11 @@
       <div class="video-row">
         <div class="video-card">
           <div class="video-916">
-            <iframe 
-              src="https://www.youtube.com/embed/q6wru08KIn4" 
-              title="Basic Edit"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-            </iframe>
+            <iframe src="https://www.youtube.com/embed/q6wru08KIn4" title="Short 1" allowfullscreen></iframe>
           </div>
           <h3>Basic Edit</h3>
         </div>
-
-        <div class="video-card">
-          <div class="video-916">
-            <iframe 
-              src="https://www.youtube.com/embed/q6wru08KIn4" 
-              title="Quick Montage"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-            </iframe>
-          </div>
-          <h3>Quick Montage</h3>
-        </div>
+        <div class="video-card"><video src="videos/short_flash_2.mp4" controls></video><h3>Quick Montage</h3></div>
       </div>
     </div>
 
@@ -227,43 +230,18 @@
       <div class="video-row">
         <div class="video-card">
           <div class="video-916">
-            <iframe 
-              src="https://www.youtube.com/embed/q6wru08KIn4" 
-              title="Product Showcase"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-            </iframe>
+            <iframe src="https://www.youtube.com/embed/q6wru08KIn4" title="Simple Edit" allowfullscreen></iframe>
           </div>
-          <h3>Product Showcase</h3>
+          <h3>Simple YouTube</h3>
         </div>
+        <div class="video-card"><video src="videos/short_simple_2.mp4" controls></video><h3>Product Showcase</h3></div>
       </div>
     </div>
 
     <div class="category"><h2>Professional</h2>
       <div class="video-row">
-        <div class="video-card">
-          <div class="video-916">
-            <iframe 
-              src="https://www.youtube.com/embed/q6wru08KIn4" 
-              title="Promo Snip"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-            </iframe>
-          </div>
-          <h3>Promo Snip</h3>
-        </div>
-
-        <div class="video-card">
-          <div class="video-916">
-            <iframe 
-              src="https://www.youtube.com/embed/q6wru08KIn4" 
-              title="Clean Cut"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-            </iframe>
-          </div>
-          <h3>Clean Cut</h3>
-        </div>
+        <div class="video-card"><video src="videos/short_pro_1.mp4" controls></video><h3>Promo Snip</h3></div>
+        <div class="video-card"><video src="videos/short_pro_2.mp4" controls></video><h3>Clean Cut</h3></div>
       </div>
     </div>
   </div>
@@ -279,6 +257,6 @@
       document.getElementById("shortForm").classList.toggle("hidden", type !== "short");
     }
   </script>
+
 </body>
 </html>
-
