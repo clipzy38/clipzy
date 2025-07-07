@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head> <link rel="stylesheet" href="style.css"> </head>
+<body>
+  
+  <nav class="navbar">
+   
+    <div class="logo">Clipzy</div>
+  
+   <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+         <a href="work.html">Projects</a>
+</nav>
+<main>
+    
+    <header class="hero" >
+  <div class="hero-content ">
+    <div class="clipzy">Clipzy </div>
+    <div class="punch" style="font-size: 60px;text-align: center; margin-top: 0p; color: #fefefe"
+    >Clip It , Ship It  , Watch It Pop !!</div> 
+    <div class="section2">
+    <h1 id="glitch-title" class="glitch">Revolutionalising Editing</h1>
+    <p class="tagline">Ready to get some dope editing ??</p>
+    <a href="work.html" class="cta-button">See Our Work</a>
+    </div>
+</header>
+<section class="apps-showcase">
+  <h2 class="section-title">Our Creative Toolkit</h2>
+  <p class="section-subtitle">We deliver <span>fast</span> and <span>flawless</span> results using industry-leading tools.</p>
+
+  <div class="apps-grid">
+    <div class="app-card" data-tilt>
+     
+      <h3>DaVinci Resolve</h3>
+      <p>Color grading & cinematic editing</p>
+    </div>
+
+    <div class="app-card" data-tilt>
+      <img src="https://img.icons8.com/color/96/adobe-premiere-pro.png" alt="Premiere Pro" />
+      <h3>Premiere Pro</h3>
+      <p>Professional video editing & workflow</p>
+    </div>
+
+    <div class="app-card" data-tilt>
+      <img src="https://img.icons8.com/color/96/adobe-after-effects.png" alt="After Effects" />
+      <h3>After Effects</h3>
+      <p>Motion graphics & visual effects</p>
+    </div>
+
+    <div class="app-card" data-tilt>
+     
+      <h3>CapCut</h3>
+      <p>Snappy social-ready mobile edits</p>
+    </div>
+  </div>
+</section>
+<h1 style="justify-self: center;font-size: 60px;color: rgb(255, 255, 255);font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">The Art of Editing</h1>
+<section class="photo-column">
+  <img src="images/project2 (1).jpg" alt="Project 1">
+  <img src="images/project2 (2).jpg" alt="Project 2">
+  <img src="images/project3.jpg" alt="Project 3">
+
+</section>
+<section class="yapinator">
+<h class="section-title">Importance of editing</h>
+  <p class="yap">The Importance of Editing
+Video editing is a crucial part of the production process because it transforms raw footage into a compelling and cohesive story. It enhances the clarity, flow, and emotional impact of a video by carefully arranging visuals, sound, transitions, and effects. Editing allows creators to remove unnecessary content, highlight key messages, and keep viewers engaged from start to finish. Whether for marketing, education, or entertainment, strong editing ensures the final product is professional, polished, and effective in delivering its intended message.</p>
+<h class="section-title">Helping Businesses</h>
+<p class="yap">How It Helps Businesses and Leads to Growth
+For businesses, high-quality video editing can be a powerful tool for growth. A well-edited video grabs attention, keeps audiences engaged, and clearly communicates your brand's message. It helps increase conversions, improve customer trust, and boost online visibility across platforms like YouTube, Instagram, and LinkedIn. Professionally edited videos can enhance product presentations, training materials, and promotional content—leading to better customer engagement, stronger brand identity, and ultimately, increased sales and business growth.</p>
+<h class="section-title">Why Choose Us</h>
+<p class="yap">Why They Should Choose Us
+Businesses should choose us for video editing because we combine technical expertise with a creative eye to deliver content that stands out. We understand how to tell a story visually, how to pace a video for maximum impact, and how to tailor edits to fit your brand’s voice and goals. From corporate promos to social media reels, we provide reliable, high-quality editing that makes your business look professional and trustworthy. With us, you're not just getting a video—you’re getting a powerful tool to connect with your audience and grow your brand.
+
+</p>
+</section>
+    
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  // Dynamic glitch effect (optional)
+  const title = document.getElementById("glitch-title");
+  const originalText = title.textContent;
+  const glitchChars = "#$%@&?!";
+  
+  function glitchText() {
+    const glitched = originalText
+      .split('')
+      .map(char => (Math.random() < 0.1 ? glitchChars[Math.floor(Math.random() * glitchChars.length)] : char))
+      .join('');
+    title.textContent = glitched;
+  }
+
+  setInterval(() => {
+    glitchText();
+    setTimeout(() => (title.textContent = originalText), 100);
+  }, 1500);
+
+  
+</script>
+<canvas id="bgCanvas"></canvas>
+<script>
+  const canvas = document.getElementById("bgCanvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  class Particle {
+    constructor() {
+      this.reset();
+    }
+
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 3 + 1;
+      this.speedX = (Math.random() - 0.5) * 0.8;
+      this.speedY = (Math.random() - 0.5) * 0.8;
+      this.color = `hsl(${Math.random() * 360}, 100%, 60%)`;
+    }
+
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+
+      if (
+        this.x < 0 || this.x > canvas.width ||
+        this.y < 0 || this.y > canvas.height
+      ) {
+        this.reset();
+      }
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.shadowBlur = 15;
+      ctx.shadowColor = this.color;
+      ctx.fill();
+    }
+  }
+
+  const particlesArray = [];
+  for (let i = 0; i < 100; i++) {
+    particlesArray.push(new Particle());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particlesArray.forEach(p => {
+      p.update();
+      p.draw();
+    });
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
+
+ <script>
+  let lastScrollTop = 0;
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", function () {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down
+      navbar.style.top = "-100px"; // hides navbar
+    } else {
+      // Scrolling up
+      navbar.style.top = "0";
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
+</main>
+<h1 style="display: flex;justify-self: center;margin-top: 80px;font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight: bold ;">Before/After</h1>
+ <video style="
+      display: flex;
+      justify-self: center;
+      border: radius 50%;
+      margin-top: 100px;
+     
+      cursor: pointer;" id="myVideo"  muted playsinline>
+    <source src="intro.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  
+<script>
+    const video = document.getElementById("myVideo");
+
+    video.addEventListener("click", () => {
+      // Unmute and play
+      video.muted = false;
+      video.play().catch(err => {
+        console.error("Video play failed:", err);
+      });
+    });
+  </script>
+<footer class="footer-glass">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>Clipzy</h2>
+      <p>Clip it, Ship it, Watch it Pop!</p>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+         <a href="work.html">Projects</a>
+      </div>
+      <div>
+        <h3>Company</h3>
+        
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+
+    <div class="footer-newsletter">
+      <h3>Join Our Newsletter</h3>
+      <input type="email" placeholder="Enter your email" />
+      <button>Subscribe</button>
+    </div>
+
+    <div class="footer-social">
+      
+     
+      <a href="https://instagram.com/clipz_zyyy"><img src="https://img.icons8.com/ios-filled/25/ffffff/instagram-new.png"/></a>
+      <a href="https://youtube.com/@clipzzyyyofficial?si=TDoKcY0C97kEeYoq "><img src="https://img.icons8.com/ios-filled/25/ffffff/youtube-play.png"/></a>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>© 2025 Clipzy. All rights reserved.</p>
+  </div>
+</footer>
+  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+<script>
+  VanillaTilt.init(document.querySelectorAll(".app-card"), {
+    max: 15,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.25
+  });
+</script>
+
+<script>
+    const video = document.getElementById('myVideo');
+
+    video.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  </script>
+</body>
+</html>

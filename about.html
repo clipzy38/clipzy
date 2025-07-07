@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+
+  <title>About Us</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #111;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+      opacity: 0;
+      transform: translateY(-40px);
+      animation: fadeInTop 1s ease forwards;
+    }
+
+    .content {
+      max-width: 800px;
+      font-size: 1.2rem;
+      color: #ccc;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInBottom 1s ease 0.4s forwards;
+    }
+
+    @keyframes fadeInTop {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInBottom {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 60px;
+      gap: 30px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      padding: 30px;
+      width: 260px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInBottom 1s ease forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.5s; }
+    .card:nth-child(2) { animation-delay: 0.7s; }
+    .card:nth-child(3) { animation-delay: 0.9s; }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <body><nav class="navbar">
+    <div class="logo">Clipzy</div>
+   <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+         <a href="work.html">Projects</a>
+</nav></body>
+  
+  
+  <div class="blobs-bg">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+    <canvas id="waveCanvas"></canvas>
+
+   
+  <section>
+    <h1 class="title">About Us</h1>
+    <p class="content">
+   At Clipzy, we believe that great editing is more than just cutting footage — it’s about telling a story, creating emotion, and driving impact. Our team is made up of some of the most versatile editors in the industry, each skilled in adapting to a wide range of styles — from cinematic storytelling and high-energy reels to minimal, clean cuts and complex motion graphics.
+
+In today’s fast-paced digital world, content isn’t one-size-fits-all. That’s why versatility in an editor isn’t optional — it’s essential. Whether you're a content creator, brand, or business, you need editors who understand different platforms, tones, and audiences. At Clipzy, we don’t just edit — we shape your vision into powerful visuals that connect, convert, and stand out.
+    </p>
+    
+
+    <div class="cards">
+      <div class="card">
+        <h3>🚀 Mission</h3>
+        <p>Empower brands through sleek, high-performing videos that deliver real results.</p>
+      </div>
+      <div class="card">
+        <h3>🎯 Vision</h3>
+        <p>To be the creative tech partner that pushes boundaries and sets new digital trends.</p>
+      </div>
+      <div class="card">
+        <h3>🤝 Values</h3>
+        <p>We value originality, quality, and a deep respect for user experience and functionality.</p>
+      </div>
+    </div>
+    
+  </section>
+<script>
+  function revealElements() {
+    const reveals = document.querySelectorAll('.reveal');
+    for (let i = 0; i < reveals.length; i++) {
+      const windowHeight = window.innerHeight;
+      const revealTop = reveals[i].getBoundingClientRect().top;
+      const revealPoint = 100;
+
+      if (revealTop < windowHeight - revealPoint) {
+        reveals[i].classList.add('active');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', revealElements);
+  window.addEventListener('load', revealElements);
+</script>
+<section class="about-founder">
+  <div class="about-container">
+   
+    <div class="founder-text">
+      <h2>About the Founder</h2>
+      <h3>Hi, I'm Yashashvi Khanduri </h3>
+      <p style="font-weight: bold;">
+        I'm the founder of <strong>Clipzy</strong> — a creative studio focused on crafting visually stunning, high-impact video edits.
+        My journey started with a passion for filmmaking and evolved into building a platform where creators and brands
+        can elevate their content through cinematic editing. Contact Me personally - yashashvi_khanduri On Instagram
+      </p>
+      <p>
+        From YouTubers to businesses, I’ve worked with clients who trust Clipzy to bring their vision to life with professional polish, storytelling, and flair.
+        We specialize in both short-form and long-form content, making each second count.
+      </p>
+      <p style="font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+        Clipzy is more than editing — it's where your footage becomes unforgettable.
+      </p>
+    </div>
+  </div>
+</section>
+<script src="blob.js"></script>
+
+</body>
+
+</html>

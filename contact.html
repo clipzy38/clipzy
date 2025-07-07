@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css"></head>
+<body>
+  <nav class="navbar">
+  <div class="logo">Clipzy</div>
+   <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+         <a href="work.html">Projects</a>
+</nav>
+  <div class="blobs-bg">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+ <canvas id="waveCanvas"></canvas>
+  
+<section class="contact-section">
+  <h1 class="contact-title">Get in Touch</h1>
+  <p class="contact-subtitle">Let's create something awesome together!</p>
+
+  <form class="contact-form" action="https://formspree.io/f/xblylwve" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  <input type="hidden" name="_redirect" value="thank-you.html" />
+<script>
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', async function(event) {
+    event.preventDefault(); // stop default submit
+    const formData = new FormData(form);
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        window.location.href = 'thank-you.html'; // redirect here on success
+      } else {
+        alert('Oops! There was a problem submitting your form.');
+      }
+    } catch (error) {
+      alert('Oops! There was a problem submitting your form.');
+    }
+  });
+</script>
+  </form>
+</section>
+
+<script>
+  function revealElements() {
+    const reveals = document.querySelectorAll('.reveal');
+    for (let i = 0; i < reveals.length; i++) {
+      const windowHeight = window.innerHeight;
+      const revealTop = reveals[i].getBoundingClientRect().top;
+      const revealPoint = 100;
+
+      if (revealTop < windowHeight - revealPoint) {
+        reveals[i].classList.add('active');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', revealElements);
+  window.addEventListener('load', revealElements);
+</script>
+<footer class="footer-contaact">
+  <div class="footer-content">
+  
+    <div class="social-links">
+      <a href="https://instagram.com/clipz_zyyy" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://youtube.com/@clipzzyyyofficial?si=TDoKcY0C97kEeYoq" target="_blank" aria-label="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.reddit.com/user/LowDiver7512/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" target="_blank" aria-label="Reddit">
+        <i class="fab fa-reddit-alien"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/clipzy-29a454361/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+    <p>&copy; 2025 Clipzy. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

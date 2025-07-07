@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Work – Video Editing Agency</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0b0b0b;
+      color: #fff;
+    }
+
+    nav.navbar {
+      background-color: #000;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      border-bottom: 1px solid #00ffff;
+    }
+
+    nav.navbar a {
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: #0f0f0f;
+      box-shadow: 0 0 10px rgba(0,255,255,0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .filter-buttons {
+      text-align: center;
+      margin: 2rem;
+    }
+
+    .filter-buttons button {
+      background: #00ffff;
+      color: #000;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      margin: 0 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 15px #00ffff;
+      transition: all 0.3s ease;
+    }
+
+    .filter-buttons button:hover {
+      background: #00cccc;
+    }
+
+    .category {
+      margin: 3rem auto;
+      max-width: 1000px;
+    }
+
+    .category h2 {
+      color: #00ffff;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .video-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .video-card {
+      background: #11111167;
+      backdrop-filter: blur(6px);
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 0 20px rgba(0,255,255,0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(0,255,255,0.3);
+    }
+
+    .video-card iframe {
+      width: 100%;
+      border-radius: 8px;
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-vertical iframe {
+      aspect-ratio: 9 / 16;
+      height: auto;
+    }
+
+    .video-card h3 {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: #00ffff;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+  <div class="logo">Clipzy</div>
+     <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+         <a href="work.html">Projects</a>
+  </nav>
+  
+
+  <header style="background-color: #00000036;backdrop-filter: blur(7px);">
+    <h1>Our Work</h1>
+  </header>
+
+  <div class="filter-buttons">
+    <button onclick="toggleView('long')">Long Form</button>
+    <button onclick="toggleView('short')">Short Form</button>
+  </div>
+
+  <!-- Long Form Videos -->
+  <div id="longForm">
+    <div class="category">
+      <h2>Long Form</h2>
+      <div class="video-row">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/VH2sIHwNgrQ" frameborder="0" allowfullscreen></iframe>
+          <h3>Long Video 1</h3>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/iPhBzvht2c0" frameborder="0" allowfullscreen></iframe>
+          <h3>Long Video 2</h3>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/x4bf0dXdu1Q" frameborder="0" allowfullscreen></iframe>
+          <h3>Long Video 3</h3>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/xw1uu5Hc_hQ" frameborder="0" allowfullscreen></iframe>
+          <h3>Long Video 4</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+ <div class="blobs-bg">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+ <canvas id="waveCanvas"></canvas>
+  <!-- Short Form Videos -->
+  <div id="shortForm" class="hidden">
+    <div class="category">
+      <h2>Short Form</h2>
+      <div class="video-row">
+        <div class="video-card video-vertical">
+          <iframe src="https://www.youtube.com/embed/5gLblQfLKyc" frameborder="0" allowfullscreen></iframe>
+          <h3>Short Video 1</h3>
+        </div>
+        <div class="video-card video-vertical">
+          <iframe src="https://www.youtube.com/embed/HuTLviXcKyM" frameborder="0" allowfullscreen></iframe>
+          <h3>Short Video 2</h3>
+        </div>
+        <div class="video-card video-vertical">
+          <iframe src="https://www.youtube.com/embed/2RmFPpcs8Bs" frameborder="0" allowfullscreen></iframe>
+          <h3>Short Video 3</h3>
+        </div>
+        <div class="video-card video-vertical">
+          <iframe src="https://www.youtube.com/embed/q6wru08KIn4" frameborder="0" allowfullscreen></iframe>
+          <h3>Short Video 4</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleView(type) {
+      document.getElementById("longForm").classList.toggle("hidden", type !== "long");
+      document.getElementById("shortForm").classList.toggle("hidden", type !== "short");
+    }
+  </script>
+
+</body>
+</html>
